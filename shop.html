@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agrosense Dynamics</title>
+
+  <style>
+    body {
+      background: black;
+      color: cyan;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    h1 {
+      text-shadow: 0 0 20px cyan;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      border: 1px solid cyan;
+      box-shadow: 0 0 15px cyan;
+      margin: 20px;
+      padding: 20px;
+      width: 220px;
+      border-radius: 10px;
+    }
+
+    button {
+      background: black;
+      color: cyan;
+      border: 1px solid cyan;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: cyan;
+      color: black;
+    }
+
+    .gap {
+      height: 800px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      background: black;
+      color: cyan;
+      border: 1px solid cyan;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>AGROSENSE DYNAMICS</h1>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Version 1</h2>
+    <p>Basic animal deterrent system</p>
+    <h3>₹700</h3>
+    <button onclick="selectProduct('Version 1')">Buy</button>
+  </div>
+
+  <div class="card">
+    <h2>Version 2</h2>
+    <p>Advanced IoT monitoring</p>
+    <h3>₹1200</h3>
+    <button onclick="selectProduct('Version 2')">Buy</button>
+  </div>
+
+  <div class="card">
+    <h2>Version 3</h2>
+    <p>Laser + sound deterrent</p>
+    <h3>₹2400</h3>
+    <button onclick="selectProduct('Version 3')">Buy</button>
+  </div>
+
+  <div class="card">
+    <h2>Version 4</h2>
+    <p>AI-powered protection</p>
+    <h3>₹3000</h3>
+    <button onclick="selectProduct('Version 4')">Buy</button>
+  </div>
+
+</div>
+
+<div class="gap"></div>
+
+<h2>🧾 Order Section</h2>
+
+<p id="productText">Selected Product: None</p>
+
+<form action="https://formsubmit.co/agrosensedynamics@gmail.com" method="POST">
+
+  <!-- Hidden fields -->
+  <input type="hidden" name="name" id="hiddenName">
+  <input type="hidden" name="email" id="hiddenEmail">
+  <input type="hidden" name="address" id="hiddenAddress">
+  <input type="hidden" name="phone" id="hiddenPhone">
+  <input type="hidden" name="product" id="hiddenProduct">
+
+  <button type="submit">Place Order</button>
+
+</form>
+
+<p>📧 All details will be contacted through: agrosensedynamics@gmail.com</p>
+
+<script>
+function selectProduct(product) {
+  document.getElementById("productText").innerText =
+    "Selected Product: " + product;
+
+  document.getElementById("hiddenProduct").value = product;
+
+  document.body.scrollIntoView({ behavior: "smooth", block: "end" });
+}
+
+// Load user data from login page
+document.getElementById("hiddenName").value = localStorage.getItem("name");
+document.getElementById("hiddenEmail").value = localStorage.getItem("email");
+document.getElementById("hiddenAddress").value = localStorage.getItem("address");
+document.getElementById("hiddenPhone").value = localStorage.getItem("phone");
+</script>
+
+</body>
+</html>
